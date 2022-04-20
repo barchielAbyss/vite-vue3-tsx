@@ -1,4 +1,4 @@
-import { getArrayDiff } from '../index'
+import { getArrayDiff } from '../test'
 
 describe('/utils/index.ts', () => {
   it('getArrayDiff', () => {

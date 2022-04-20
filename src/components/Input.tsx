@@ -9,6 +9,7 @@ export const InputNumbers = defineComponent({
   props: {
     value: {
       type: Number,
+      default: 0,
     },
   },
   emits: {
@@ -17,19 +18,19 @@ export const InputNumbers = defineComponent({
     },
   },
   setup(prop, context) {
-    const value = ref(prop.value)
+    const inputValue = ref(prop.value)
     const onChange = (e: Event) => {
       const val = getInputValue(e)
-      value.value = Number(val)
-      context.emit('change', value.value)
+      inputValue.value = Number(val)
+      context.emit('change', inputValue.value)
     }
     return {
-      value,
+      inputValue,
       onChange,
     }
   },
   render() {
-    const { value, onChange } = this
-    return <input value={value} type="number" onChange={onChange} />
+    const { inputValue, onChange } = this
+    return <input value={inputValue} type="number" onChange={onChange} />
   },
 })
