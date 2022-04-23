@@ -1,4 +1,4 @@
-import { defineComponent, Suspense, ref } from 'vue'
+import { defineComponent, watchEffect, Suspense, ref } from 'vue'
 
 // import HelloWorld from '@/components/HelloWorld'
 
@@ -12,8 +12,6 @@ import { RouterView } from 'vue-router'
 
 export default defineComponent({
   setup() {
-    // window.addEventListener('scroll', () => {})
-
     const $video = ref(null)
 
     return () => (
