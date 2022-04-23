@@ -12,3 +12,23 @@ export const thousandSeparator = (num: number): string => {
 
   return str
 }
+
+// 反转字母大小写
+export const reverseCase = (str: string): string => {
+  if (!str) {
+    return ''
+  }
+  let result = ''
+  for (const s of str) {
+    const sId = s.charCodeAt(0)
+    if (sId >= 65 && sId <= 90) {
+      result += String.fromCharCode(sId + 32)
+    } else if (sId >= 97 && sId <= 122) {
+      result += String.fromCharCode(sId - 32)
+    } else {
+      result += s
+    }
+  }
+
+  return result
+}
