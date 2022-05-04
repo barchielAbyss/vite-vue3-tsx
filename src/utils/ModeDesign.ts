@@ -228,3 +228,29 @@ class CityManager {
 const city = new CityManager()
 city.addManager(new CompanyManager())
 city.run()
+
+// 单向关联
+class Category {}
+class Project {
+  private category: Category
+  constructor(category: Category) {
+    this.category = category
+  }
+}
+
+// 双向关联 Category2 是 Project2 的聚合
+class Category2 {
+  private projects: Array<Project>
+  constructor(projects: Array<Project>) {
+    this.projects = projects
+  }
+}
+class Project2 {
+  private category: Category2
+  constructor(category: Category2) {
+    this.category = category
+  }
+}
+
+// 依赖 > 关联 >  聚合 > 组合
+// 尽量使用组合和聚合，而不是继承，继承的耦合性太强
